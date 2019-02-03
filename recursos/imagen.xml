@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<imagenes>
+    <imagen>
+        <id_imagen></id_imagen>
+        <img_titulo></img_titulo>
+        <img_url></img_url>
+    </imagen>
+
+</imagenes>

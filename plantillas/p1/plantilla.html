@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{nombre}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Custom fonts for this template -->
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'>
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'>
+
+    <!-- Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Bootstrap core js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="main.js"></script>
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">{{ nombre }}</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Sobre nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#news">Noticias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#activities">Actividades</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Galería</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase website_name">
+              <strong>{{ nombre }}</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-header mb-5 box">{{ resumen }}</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Saber más</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading h-color">Sobre nosotros</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-users mb-3 sr-icons"></i>
+              <h3 class="mb-3 h-color">¿Quiénes somos?</h3>
+              <p class="text-faded txt-alineado mb-0">{{ sobrenosotros }}</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-leanpub mb-3 sr-icons"></i>
+              <h3 class="mb-3 h-color">Historia</h3>
+              <p class="text-faded txt-alineado mb-0">
+                 {{ historia }}
+            </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-black-tie mb-3 sr-icons"></i>
+              <h3 class="mb-3 h-color">Junta directiva</h3>
+              <ul class="text-faded txt-alineado">
+                  {% for item in juntadir %}
+                <li>{{ item }}</li>
+                  {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-primary" id="news">
+      <div class="container">
+        {% for n in noticias %}
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-news">
+            {% if n.titulo != None %}
+            <h3 class="section-heading text-center"> {{ n.titulo }} </h3>
+            {% endif %}
+            {% if n.fecha != None %}
+            <p> {{ n.fecha }}</p>
+            {% endif %}
+            <hr class="light my-4">
+            {% if n.descripcion != None %}
+            <p class="mb-4">{{ n.descripcion }} </p>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="text-activities" id="activities">
+      <div class="container text-center">
+        <h2 class="mb-4">Actividades</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Hora</th>
+                <th scope="col">Lugar</th>
+                <th scope="col">Descripción</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for a in actividades %}
+              <tr>
+                {% if a.nombre != None %}
+                <th scope="row">{{ a.nombre }}</th>
+                {% endif %}
+
+                {% if a.fecha != None %}
+                <td>{{ a.fecha }}</td>
+                {% endif %}
+
+                {% if a.hora != None %}
+                <td>{{ a.hora }}</td>
+                {% endif %}
+
+                {% if a.lugar != None %}
+                <td>{{ a.lugar }}</td>
+                {% endif %}
+
+                {% if a.descripcion != None %}
+                <td>{{ a.descripcion }}</td>
+                {% endif %}
+
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+      </div>
+    </section>
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+        {% for i in imagenes %}
+          {% if i.img_url != None %}
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="{{ i.img_url }}">
+              <img class="img-fluid" src="{{ i.img_url }}" alt="La imagen no se ha podido cargar">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-name">
+                    {% if i.img_titulo != None %}
+                        {{ i.img_titulo }}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endif %}
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading h-color">¡Contacta con nosotros!</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p class="text-faded">{{ telefono }}</p>
+          </div>
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-home fa-3x mb-3 sr-contact"></i>
+            <p class="text-faded">{{ direccion }}</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:{{ email }}">{{ email }}</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 ml-auto text-center">
+            <h2 class="section-heading h-color">Enlaces de interés</h2>
+            <hr class="my-4">
+            <ul>
+              {% for e in enlaces %}
+                  {% if e.nombre != None and e.nombre != 'Facebook' and e.nombre != 'Twitter' and e.nombre !='YouTube' and e.nombre != 'Pinterest' %}
+                    <li><a href="{{ e.url }}">{{ e.nombre }}</a></li>
+                  {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-lg-6 ml-auto text-center">
+            <h2 class="section-heading h-color">¡SÍGUENOS!</h2>
+            <hr class="my-4">
+              {% for e in enlaces %}
+                  {% if e.nombre == 'Facebook' %}
+                    <a href="{{ e.url }}" class="fa fa-facebook-official" style="font-size:24px;"></a>
+                  {% elif e.nombre == 'Twitter' %}
+                    <a href="{{ e.url }}" class="fa fa-twitter-square" style="font-size:24px;"></a>
+                  {% elif e.nombre == 'YouTube' %}
+                    <a href="{{ e.url }}" class="fa fa-youtube" style="font-size:24px;"></a>
+                  {% elif e.nombre == 'Pinterest' %}
+                    <a href="{{ pint }}" class="fa fa-pinterest-p" style="font-size:24px;"></a>
+                  {% endif %}
+               {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>Generated with WebAsocDesigner App. 2018 TFG UVigo</footer>
+  </body>
+
+</html>

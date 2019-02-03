@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<proyecto>
+    <nombre_proyecto></nombre_proyecto>
+    <nombre_web></nombre_web>
+    <logo></logo>
+    <resumen></resumen>
+    <email></email>
+    <telefono></telefono>
+    <direccion></direccion>
+    <sobrenosotros></sobrenosotros>
+    <historia></historia>
+    <junta_directiva></junta_directiva>
+</proyecto>

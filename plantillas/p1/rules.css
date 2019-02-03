@@ -1,0 +1,9 @@
+:root {
+    --bg_color_seccion: #F05F40;
+    --h_color: black;
+    --p_color_section: white;
+    --p_color_body: rgba(77,77, 77, 0.7);
+    --name_website_color: black;
+    --h_tipoFuente: 'Open Sans';
+    --p_tipoFuente: 'Merriweather';
+}

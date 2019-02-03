@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{nombre}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Bootstrap core js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.4.0/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="main.js"></script>
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">{{nombre}}</span>
+        <span class="d-none d-lg-block">
+          {% if logo != None %}
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ logo }}" alt="">
+          {% endif %}
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Sobre nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#news">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#activities">Actividades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#portfolio">Galería</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#links">Enlaces de interés</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="contact">
+        <div class="my-auto">
+          <h1 class="mb-0 text-primary">{{nombre}}</h1>
+          <div class="subheading mb-5">{{ direccion }}· {{ telefono }} ·
+            <a href="mailto:{{ email }}">{{ email }}</a>
+          </div>
+          <p class="mb-5">{{ resumen }}</p>
+
+          <ul class="list-inline list-social-icons mb-0">
+            {% for e in enlaces %}
+                {% if e.nombre == 'Facebook' %}
+                <li class="list-inline-item">
+                  <a href="{{ e.url }}">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                {% elif e.nombre == 'Twitter' %}
+                <li class="list-inline-item">
+                  <a href="{{ e.url }}">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                {% elif e.nombre == 'Pinterest' %}
+                <li class="list-inline-item">
+                  <a href="{{ e.url }}">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                {% elif e.nombre == 'YouTube' %}
+                <li class="list-inline-item">
+                  <a href="{{ e.url }}">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                {% endif %}
+           {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h2 class="section-heading mb-5"> Sobre nosotros</h2>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <i class="fa fa-2x fa-users mb-3 sr-icons">¿Quiénes somos?</i>
+              <p class="text-faded mb-0">{{ sobrenosotros }}</p>
+            </div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <i class="fa fa-2x fa-leanpub mb-3 sr-icons"> Historia</i>
+              <p class="text-faded mb-0">{{ historia }}</p>
+            </div>
+          </div>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <i class="fa fa-2x fa-black-tie mb-3 sr-icons"> Junta directiva</i>
+              <ul class="text-faded">
+                {% for item in juntadir %}
+                <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="news">
+        <div class="my-auto">
+          <h2 class="mb-5">Noticias</h2>
+
+          {% for n in noticias %}
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              {% if n.titulo != None %}
+              <h3 class="mb-0">{{ n.titulo }}</h3>
+              {% endif %}
+
+              {% if n.descripcion != None %}
+              <p>{{ n.descripcion }}</p>
+              {% endif %}
+            </div>
+            <div class="resume-date text-md-right">
+              {% if n.fecha != None %}
+              <span class="text-primary">{{ n.fecha }}</span>
+              {% endif %}
+            </div>
+          </div>
+         {% endfor %}
+
+          </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="activities">
+        <div class="my-auto">
+          <h2 class="mb-5">Actividades</h2>
+          {% for a in actividades %}
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+
+              {% if a.nombre != None %}
+              <h3 class="mb-0">{{ a.nombre }}</h3>
+              {% endif %}
+
+              {% if a.lugar != None %}
+              <div class="subheading mb-3">{{ a.lugar }}</div>
+              {% endif %}
+
+              <p>{% if a.fecha != None %}{{ a.fecha }}{% endif %} {% if a.hora != None %} - {{ a.hora }}{% endif %}</p>
+
+            {% if a.descripcion != None %}
+              <p>{{ a.descripcion }}</p>
+            {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="portfolio">
+        <div class="container-fluid p-0">
+          <div class="row no-gutters popup-gallery">
+            {% for i in imagenes %}
+                {% if i.img_url != None %}
+                <div class="col-lg-4 col-sm-6">
+                  <a class="portfolio-box" href="{{ i.img_url }}">
+                    <img class="img-fluid" src="{{ i.img_url }}" alt="La imagen no se ha podido cargar">
+                    <div class="portfolio-box-caption">
+                      <div class="portfolio-box-caption-content">
+                        <div class="project-name">
+                          {% if i.img_titulo != None %}
+                            {{ i.img_titulo }}
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                {% endif %}
+            {% endfor %}
+
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="links">
+        <div class="my-auto">
+          <h2 class="mb-5">Enlaces de interés</h2>
+          <ul class="fa-ul mb-0">
+            {% for e in enlaces %}
+                {% if e.nombre != None and e.nombre != 'Facebook' and e.nombre != 'Twitter' and e.nombre !='YouTube' and e.nombre != 'Pinterest' %}
+                <li>
+                  <i class="fa-li fa fa-check"></i>
+                  <a href="{{ e.url }}">{{ e.nombre }}</a>
+                </li>
+                {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+    </div>
+  <footer>Generated with WebAsocDesigner App. 2018 TFG UVigo</footer>
+  </body>
+
+</html>

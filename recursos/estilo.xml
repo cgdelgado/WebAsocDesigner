@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plantilla>
+    <bg_color_seccion></bg_color_seccion>
+    <h_color></h_color>
+    <p_color_section></p_color_section>
+    <p_color_body></p_color_body>
+    <name_website_color></name_website_color>
+    <h_tipoFuente></h_tipoFuente>
+    <p_tipoFuente></p_tipoFuente>
+</plantilla>

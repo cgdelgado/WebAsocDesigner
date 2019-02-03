@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<actividades>
+    <actividad>
+        <id_actividad></id_actividad>
+        <nombre></nombre>
+        <descripcion></descripcion>
+        <fecha></fecha>
+        <hora></hora>
+        <lugar></lugar>
+    </actividad>
+
+</actividades>
